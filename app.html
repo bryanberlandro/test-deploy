@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Russo+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/dist/output.css">
+
+    <script src="https://kit.fontawesome.com/9882d00535.js" crossorigin="anonymous"></script>
+
+</head>
+<body class="font-montserat overflow-x-hidden">
+    
+    <header class="text-primary w-full h-16 flex border-b-2 px-[5%] items-center bg-white fixed justify-between z-40">
+        <div class="flex flex-row-reverse w-[60%] items-center justify-between h-full xl:flex-row xl:justify-start xl:gap-10">
+            <h1 class="font-bold text-xl text-secondary font-Russo tracking-widest italic">CARSELL</h1>
+            <div onclick="showSidebar()" class="relative xl:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" />
+                </svg>                  
+            </div>
+            <nav class="sidebar absolute top-0 left-0 bg-white w-56 h-[100vh] pt-10 px-4 -translate-x-[250px] transition-all duration-500 ease-in-out shadow-md xl:relative xl:translate-x-0 xl:w-max xl:shadow-none xl:gap-14 xl:h-max xl:p-0">
+                <div onclick="closeSidebar()" class="absolute block right-2 top-2 xl:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                        <path fill-rule="evenodd" d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                    </svg>                  
+                </div>
+                <ul class="flex flex-col gap-6 z-10 font-medium xl:flex-row xl:text-sm xl:gap-10">
+                    <h1 class="font-bold text-xl font-Russo tracking-widest italic xl:hidden">CARSELL</h1>
+                    <li>
+                        <a href="#home">Home</a>
+                    </li>
+                    <li>
+                        <a href="#buy">Buy</a>
+                    </li>
+                    <li>
+                        <a href="#howItWork">How it works</a>
+                    </li>
+                    <li>
+                        <a href="#review">Review</a>
+                    </li>
+                    <li class="relative">
+                        <!-- onclick="showExtraService()" -->
+                        <div  class="service-nav flex items-center gap-2">
+                            <a href="#service">Services</a>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+                                <path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z" clip-rule="evenodd" />
+                            </svg>                              
+                        </div>
+                        <div class="extra-service transition-all hidden xl:block duration-500 absolute top-6 left-0 w-full xl:w-40 bg-slate-100 bg-opacity-95 rounded-md xl:bg-white xl:-translate-y-44 xl:opacity-0 shadow-multiple">
+                            <ul class="flex flex-col px-2 py-2">
+                                <li class="w-full py-2 hover:bg-slate-200 px-2 rounded-sm">
+                                    <a href="">CarAudit&trade;</a>
+                                </li>
+                                <li class="w-full py-2 hover:bg-slate-200 px-2 rounded-sm">
+                                    <a href="">Delivery</a>
+                                </li>
+                                <li class="w-full py-2 hover:bg-slate-200 px-2 rounded-sm">
+                                    <a href="">Financing</a>
+                                </li>
+                                <li class="w-full py-2 hover:bg-slate-200 px-2 rounded-sm">
+                                    <a href="">Warranty</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="flex gap-4 xl:gap-6">
+            <div onclick="showFavorite()">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                </svg>                  
+            </div>
+            <div onclick="showProfile()" class="profile-icon flex items-center gap-2 relative">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                </svg> 
+                <p class="hidden md:block">Login</p>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 hidden md:block ">
+                    <path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z" clip-rule="evenodd" />
+                </svg>  
+
+                <!-- Desktop Profile on Hover -->
+                    <div class="desktop-profile absolute transition-all duration-500 right-0 top-7 -translate-y-[500px] opacity-0 w-72 bg-white rounded-md hidden xl:flex">
+
+                        <!-- PROFILE NAV -->
+                        <div class="w-full flex flex-col justify-between h-full py-2 px-2">
+
+                            <!-- LIST -->
+                            <ul class="text-primary w-full flex flex-col border-b-2 pb-4">
+                                <li class="flex items-center gap-4 tracking-wide font-medium w-full active:bg-neutral-100 active:scale-95 transition-all duration-300 py-5 px-[5%] hover:bg-neutral-100 cursor-pointer">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" />
+                                    </svg>                      
+                                    <a href="">Saved searches</a>
+                                </li>
+                                <li class="flex items-center gap-4 tracking-wide font-medium w-full active:bg-neutral-100 active:scale-95 transition-all duration-300 py-5 px-[5%] hover:bg-neutral-100 cursor-pointer">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                    </svg>                                                
+                                    <a href="">Last searches</a>
+                                </li>
+                                <li class="flex items-center gap-4 tracking-wide font-medium w-full active:bg-neutral-100 active:scale-95 transition-all duration-300 py-5 px-[5%] hover:bg-neutral-100 cursor-pointer">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                                    </svg>                                                
+                                    <a href="">Favorite cars</a>
+                                </li>
+                                <li class="flex items-center gap-4 tracking-wide font-medium w-full active:bg-neutral-100 active:scale-95 transition-all duration-300 py-5 px-[5%] hover:bg-neutral-100 cursor-pointer">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                    </svg>                                                
+                                    <a href="">Order in progress</a>
+                                </li>                   
+                            </ul>
+                            <!-- LIST -->
+
+                            <!-- EXTRA -->
+                            <div class="w-full h-full flex flex-col justify-end gap-10 py-4">
+                                <div class="px-[5%] flex flex-col items-center gap-4">
+                                    <button onclick="showLogin()" class="flex items-center justify-center gap-4 py-3 w-full bg-gradient-to-l from-primary to-tertiary font-semibold transition-all duration-300 rounded-md text-white tracking-wide shadow-sm hover:scale-[.98] bg-size-200 bg-pos-0 hover:bg-pos-100 ">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                        </svg>                                                    
+                                        Login
+                                    </button>
+                                    <p class="text-sm text-black">Don't have an account? <a href="" class="underline underline-offset-2 text-primary font-medium">Register</a></p>
+                                </div>
+                            </div>
+                            <!-- EXTRA -->
+
+                        </div>
+                        <!-- PROFILE NAV -->
+                    </div>    
+                <!-- Desktop Profile on Hover -->
+
+            </div>
+        </div>
+    </header> 
+
+
+    <div id="app"></div>
+
+    <footer class="w-full bg-zinc-100 px-[5%] pt-8 border-t-2 md:pt-10 xl:pt-0">
+        <div class="h-[70%] flex flex-col-reverse gap-8 pb-8 border-b-2 md:gap-14 xl:flex-row xl:py-14">
+
+            <!-- HERO -->
+            <div class="flex flex-col gap-4 md:flex-row md:justify-between md:items-start xl:flex-col xl:gap-6 xl:justify-normal xl:w-[40%]">
+                <h1 class="italic font-bold font-Russo text-secondary text-xl tracking-wider xl:text-2xl">CARSELL</h1>
+                <div class="flex flex-col gap-4 xl:gap-6">
+                    <p class="text-sm text-neutral-600">Carsell 2024 All rights reserved</p>
+                    <div class="flex gap-6">
+                        <div class="w-6 h-6">
+                            <svg role="img" fill="#1450A3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Instagram</title><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg>
+                        </div>
+                        <div class="w-6 h-6">
+                            <svg role="img" fill="#1450A3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>YouTube</title><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        </div>
+                        <div class="w-6 h-6">
+                            <svg role="img" fill="#1450A3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Facebook</title><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg>                
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- HERO -->
+
+            <!-- LIST -->
+            <div class="flex flex-wrap w-full justify-between gap-y-8 md:w-[80%]">
+                <div class="w-[45%] md:w-fit">
+                    <h1 class="font-semibold xl:font-bold">Carsell</h1>
+                    <ul class="text-sm flex flex-col gap-2 mt-4">
+                        <li>
+                            <a href="">Buy</a>
+                        </li>
+                        <li>
+                            <a href="">How it works</a>
+                        </li>
+                        <li>
+                            <a href="">Reviews</a>
+                        </li>
+                        <li>
+                            <a href="">Site map</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="w-[45%] md:w-fit">
+                    <h1 class="font-semibold xl:font-bold">Services</h1>
+                    <ul class="text-sm flex flex-col gap-2 mt-4">
+                        <li>
+                            <a href="">CarAudit &trade;</a>
+                        </li>
+                        <li>
+                            <a href="">Delivery</a>
+                        </li>
+                        <li>
+                            <a href="">Financing</a>
+                        </li>
+                        <li>
+                            <a href="">Warranty</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="w-[45%] md:w-fit">
+                    <h1 class="font-semibold xl:font-bold">Company</h1>
+                    <ul class="text-sm flex flex-col gap-2 mt-4">
+                        <li>
+                            <a href="">About us</a>
+                        </li>
+                        <li>
+                            <a href="">Contact</a>
+                        </li>
+                        <li>
+                            <a href="">Terms of Use</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- LIST -->
+        </div>
+        <div class="h-[30%] flex flex-col justify-center py-6 md:flex-row md:justify-between md:items-start">
+            <div class="text-xs md:text-sm md:w-96">
+                <p>We accept online card payments as well as wire transfers.</p>
+            </div>
+            <div class="flex gap-3 mt-4 md:mt-0">
+                <div class="">
+                    <img src="/assets/images/icons8-mastercard-48.png" alt="">
+                </div>
+                <div class="">
+                    <img src="/assets/images/icons8-paypal-48.png" alt="">
+                </div>
+                <div class="">
+                    <img src="/assets/images/icons8-visa-48.png" alt="">
+                </div>
+                <div class="">
+                    <img src="/assets/images/icons8-mastercard-48.png" alt="">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./src/app.js" type="module"></script>
+</body>
+</html>
